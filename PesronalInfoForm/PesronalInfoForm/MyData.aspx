@@ -10,6 +10,21 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Фамилия 
+            <asp:TextBox ID="FamilyNameTextBox" runat="server" />
+            <br /><br />
+            Имя
+            <asp:TextBox ID="FirstNameTextBox" runat="server" />
+            <br /><br />
+            Отчество 
+            <asp:TextBox ID="PatronimTextBox" runat="server" />
+            <br /><br />
+            Пол
+            <br />
+            <asp:RadioButton ID="MaleRadioButton" Text="Мужской" GroupName="Sex" runat="server" />
+            <asp:RadioButton ID="FemaleRadioButton" Text="Женский" GroupName="Sex" runat="server" />
+            <br /><br />
+            <asp:Button ID="SendButton" Text="Отправить" OnClick="SendButton_Click" runat="server" />
         </div>
     </form>
 </body>

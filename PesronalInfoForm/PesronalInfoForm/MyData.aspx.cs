@@ -13,5 +13,22 @@ namespace PesronalInfoForm
         {
 
         }
+
+        protected void SendButton_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            if(FamilyNameTextBox.Text!=string.Empty)
+                Session["FamilyName"] = FamilyNameTextBox.Text;
+            if(FirstNameTextBox.Text!=string.Empty)
+                Session["FirstName"] = FirstNameTextBox.Text;
+            if(PatronimTextBox.Text!=string.Empty)
+                Session["Patronim"] = PatronimTextBox.Text;
+            if (MaleRadioButton.Checked)
+                Session["Sex"] = "мужской";
+            else if (FemaleRadioButton.Checked)
+                Session["Sex"] = "женский";
+
+            Response.Redirect("MyDataView.aspx");
+        }
     }
 }

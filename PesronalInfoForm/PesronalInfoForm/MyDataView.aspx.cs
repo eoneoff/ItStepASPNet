@@ -11,7 +11,14 @@ namespace PesronalInfoForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["FamilyName"]!=null)
+                FamilyNameLabel.Text = Session["FamilyName"] as string;
+            if(Session["FirstName"]!=null)
+                FirstNameLabel.Text = Session["FirstName"] as string;
+            if(Session["Patronim"]!=null)
+                PatronimLabel.Text = Session["Patronim"] as string;
+            if(Session["Sex"]!=null)
+                SexLabel.Text = Session["Sex"] as string;
         }
     }
 }

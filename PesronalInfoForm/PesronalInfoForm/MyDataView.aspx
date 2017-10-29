@@ -10,6 +10,17 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Фамилия
+            <asp:Label ID="FamilyNameLabel" Text="Нет данных" runat="server" />
+            <br /><br />
+            Имя
+            <asp:Label ID="FirstNameLabel" Text="Нет данных" runat="server" />
+            <br /><br />
+            Отчество
+            <asp:Label ID="PatronimLabel" Text="Нет данных" runat="server" />
+            <br /><br />
+            Пол
+            <asp:Label ID="SexLabel" Text="Нет данных" runat="server" />
         </div>
     </form>
 </body>
