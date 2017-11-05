@@ -11,19 +11,26 @@ namespace PesronalInfoForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(! String.IsNullOrEmpty(Request.Form["FamiliName"]))
-                FamilyNameLabel.Text = Request.Form["FamilyName"];
-            if(!String.IsNullOrEmpty(Request.Form["FirstName"]))
-                FirstNameLabel.Text = Request.Form["FirstName"];
-            if(!String.IsNullOrEmpty(Request.Form["Patronim"]))
-                PatronimLabel.Text = Request.Form["Patronim"];
-            if(Request.Form["Sex"]!=null)
-            {
-                if (Request.Form["Sex"] == "male")
-                    SexLabel.Text = "Мужской";
-                else
-                    SexLabel.Text = "Женский";
-            }
+            if(!String.IsNullOrEmpty(Cache["FamilyName"] as string))
+                FamilyNameLabel.Text = Cache["FamilyName"] as string;
+
+            if(!String.IsNullOrEmpty(Cache ["FirstName"] as string))
+                FirstNameLabel.Text = Cache["FirstName"] as string;
+
+            if(!String.IsNullOrEmpty(Cache["Patronim"] as string))
+                PatronimLabel.Text = Cache["Patronim"] as string;
+
+            if (Cache["Sex"] != null)
+                SexLabel.Text = Cache["Sex"] as string;
+
+            if (Cache["City"] != null)
+                CityLabel.Text = Cache["City"] as string;
+            
+            if(Cache["Hobbies"]!=null)
+                HobbyLabel.Text = Cache["Hobbies"] as string;
+
+            if (Cache["BirthDate"] != null)
+                BirthDayLabel.Text = Cache["BirthDate"] as string;
         }
     }
 }

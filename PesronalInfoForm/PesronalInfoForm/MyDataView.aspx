@@ -9,6 +9,7 @@
     <style>
         #form1
         {
+            color:white;
             background-color:cornflowerblue;
             width:300px;
             margin:10px;
@@ -35,6 +36,18 @@
                 <tr>
                     <td>Пол</td>
                     <td><asp:Label ID="SexLabel" Text="Нет данных" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td>Город</td>
+                    <td><asp:Label ID="CityLabel" Text="Нет данных" runat="server"/></td>
+                </tr>
+                <tr>
+                    <td valign="top">Хобби</td>
+                    <td><asp:Label ID="HobbyLabel" Text="Нет данных" runat="server"/></td>
+                </tr>
+                <tr>
+                    <td>Дата рождения</td>
+                    <td><asp:Label ID="BirthDayLabel" Text="Нет данных" runat="server"/></td>
                 </tr>
             </table>
         </div>

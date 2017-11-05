@@ -9,6 +9,7 @@
     <style>
         #form1
         {
+            color:white;
             background-color:cornflowerblue;
             width:300px;
             margin:10px;
@@ -17,31 +18,54 @@
     </style>
 </head>
 <body>
-    <form id="form1" method="post" action="MyDataView.aspx" runat="server">
+    <form id="form1" method="post" runat="server">
         <div>
             <table>
                 <tr>
                     <td>Фамилия</td>
-                    <td><input type="text" id="FamilyName" runat="server"/></td>
+                    <td><asp:TextBox ID="FamilyNameTextBox" runat="server"/></td>
                 </tr>
                 <tr>
                     <td>Имя</td>
-                    <td><input type="text" id="FirstName" runat="server" /></td>
+                    <td><asp:TextBox ID="FirstNameTextBox" runat="server"/></td>
                 </tr>
                 <tr>
                     <td>Отчество</td>
-                    <td><input type="text" id="Patronim" runat="server" /></td>
+                    <td><asp:TextBox ID="PatronimTextBox" runat="server"/></td>
                 </tr>
             </table>
             Пол
             <br />
-            <input type="radio" value="male" name="sex" checked runat="server" />
-            Мужской
+            <asp:RadioButton ID="MaleRadio" Text="Мужской" Checked="true" GroupName="Sex" runat="server"/>
             &nbsp;&nbsp;&nbsp;
-            <input type="radio" value="female" name="sex" runat="server"/>
-            Женский
+            <asp:RadioButton ID="FemaleRadio" Text="Женский" GroupName="Sex" runat="server" />
             <br /><br />
-            <input type="submit" value="Отправить" runat="server" />
+            Город
+            <asp:DropDownList ID="Cities" runat="server" AutoPostBack="false"/>
+            <br /><br />
+            Хобби<br />
+            <asp:CheckBoxList ID="Hobbies" runat="server" />
+            <br />
+            Дата рождения
+            <asp:Calendar ID="BirthDate" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px"></DayHeaderStyle>
+
+                <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF"></NextPrevStyle>
+
+                <OtherMonthDayStyle ForeColor="#999999"></OtherMonthDayStyle>
+
+                <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99"></SelectedDayStyle>
+
+                <SelectorStyle BackColor="#99CCCC" ForeColor="#336666"></SelectorStyle>
+
+                <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px"></TitleStyle>
+
+                <TodayDayStyle BackColor="#99CCCC" ForeColor="White"></TodayDayStyle>
+
+                <WeekendDayStyle BackColor="#CCCCFF"></WeekendDayStyle>
+            </asp:Calendar>
+            <br />
+            <asp:Button ID="Submit" Text="Отправить" onclick="Submit_Click" runat="server"/>
         </div>
     </form>
 </body>
