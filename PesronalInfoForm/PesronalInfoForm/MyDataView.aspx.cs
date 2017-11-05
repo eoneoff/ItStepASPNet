@@ -11,11 +11,11 @@ namespace PesronalInfoForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.Form["FamilyName"]!=String.Empty)
+            if(! String.IsNullOrEmpty(Request.Form["FamiliName"]))
                 FamilyNameLabel.Text = Request.Form["FamilyName"];
-            if(Request.Form["FirstName"]!=String.Empty)
+            if(!String.IsNullOrEmpty(Request.Form["FirstName"]))
                 FirstNameLabel.Text = Request.Form["FirstName"];
-            if(Request.Form["Patronim"]!=String.Empty)
+            if(!String.IsNullOrEmpty(Request.Form["Patronim"]))
                 PatronimLabel.Text = Request.Form["Patronim"];
             if(Request.Form["Sex"]!=null)
             {

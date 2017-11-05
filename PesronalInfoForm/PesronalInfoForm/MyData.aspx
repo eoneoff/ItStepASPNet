@@ -5,7 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Введите данные</title>
+    <style>
+        #form1
+        {
+            background-color:cornflowerblue;
+            width:300px;
+            margin:10px;
+            padding:10px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" method="post" action="MyDataView.aspx" runat="server">
@@ -26,7 +35,7 @@
             </table>
             Пол
             <br />
-            <input type="radio" value="male" name="sex" runat="server" />
+            <input type="radio" value="male" name="sex" checked runat="server" />
             Мужской
             &nbsp;&nbsp;&nbsp;
             <input type="radio" value="female" name="sex" runat="server"/>
