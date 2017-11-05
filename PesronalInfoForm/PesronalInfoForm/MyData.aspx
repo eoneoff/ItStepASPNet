@@ -8,23 +8,31 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" method="post" action="MyDataView.aspx" runat="server">
         <div>
-            Фамилия 
-            <asp:TextBox ID="FamilyNameTextBox" runat="server" />
-            <br /><br />
-            Имя
-            <asp:TextBox ID="FirstNameTextBox" runat="server" />
-            <br /><br />
-            Отчество 
-            <asp:TextBox ID="PatronimTextBox" runat="server" />
-            <br /><br />
+            <table>
+                <tr>
+                    <td>Фамилия</td>
+                    <td><input type="text" id="FamilyName" runat="server"/></td>
+                </tr>
+                <tr>
+                    <td>Имя</td>
+                    <td><input type="text" id="FirstName" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td>Отчество</td>
+                    <td><input type="text" id="Patronim" runat="server" /></td>
+                </tr>
+            </table>
             Пол
             <br />
-            <asp:RadioButton ID="MaleRadioButton" Text="Мужской" GroupName="Sex" runat="server" />
-            <asp:RadioButton ID="FemaleRadioButton" Text="Женский" GroupName="Sex" runat="server" />
+            <input type="radio" value="male" name="sex" runat="server" />
+            Мужской
+            &nbsp;&nbsp;&nbsp;
+            <input type="radio" value="female" name="sex" runat="server"/>
+            Женский
             <br /><br />
-            <asp:Button ID="SendButton" Text="Отправить" OnClick="SendButton_Click" runat="server" />
+            <input type="submit" value="Отправить" runat="server" />
         </div>
     </form>
 </body>

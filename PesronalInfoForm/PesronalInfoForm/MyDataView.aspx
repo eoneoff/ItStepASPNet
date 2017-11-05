@@ -10,17 +10,24 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Фамилия
-            <asp:Label ID="FamilyNameLabel" Text="Нет данных" runat="server" />
-            <br /><br />
-            Имя
-            <asp:Label ID="FirstNameLabel" Text="Нет данных" runat="server" />
-            <br /><br />
-            Отчество
-            <asp:Label ID="PatronimLabel" Text="Нет данных" runat="server" />
-            <br /><br />
-            Пол
-            <asp:Label ID="SexLabel" Text="Нет данных" runat="server" />
+            <table>
+                <tr>
+                    <td>Фамилия</td>
+                    <td><asp:Label ID="FamilyNameLabel" Text="Нет данных" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td>Имя</td>
+                    <td><asp:Label ID="FirstNameLabel" Text="Нет данных" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td>Отчество</td>
+                    <td><asp:Label ID="PatronimLabel" Text="Нет данных" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td>Пол</td>
+                    <td><asp:Label ID="SexLabel" Text="Нет данных" runat="server" /></td>
+                </tr>
+            </table>
         </div>
     </form>
 </body>
