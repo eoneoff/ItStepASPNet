@@ -15,6 +15,11 @@
             margin:10px;
             padding:10px;
         }
+
+        .label
+        {
+            color:yellow;
+        }
     </style>
 </head>
 <body>
@@ -22,31 +27,31 @@
         <div>
             <table>
                 <tr>
-                    <td>Фамилия</td>
+                    <td class="label">Фамилия</td>
                     <td><asp:Label ID="FamilyNameLabel" Text="Нет данных" runat="server" /></td>
                 </tr>
                 <tr>
-                    <td>Имя</td>
+                    <td class="label">Имя</td>
                     <td><asp:Label ID="FirstNameLabel" Text="Нет данных" runat="server" /></td>
                 </tr>
                 <tr>
-                    <td>Отчество</td>
+                    <td class="label">Отчество</td>
                     <td><asp:Label ID="PatronimLabel" Text="Нет данных" runat="server" /></td>
                 </tr>
                 <tr>
-                    <td>Пол</td>
+                    <td class="label">Пол</td>
                     <td><asp:Label ID="SexLabel" Text="Нет данных" runat="server" /></td>
                 </tr>
                 <tr>
-                    <td>Город</td>
+                    <td class="label">Город</td>
                     <td><asp:Label ID="CityLabel" Text="Нет данных" runat="server"/></td>
                 </tr>
                 <tr>
-                    <td valign="top">Хобби</td>
+                    <td valign="top" class="label">Хобби</td>
                     <td><asp:Label ID="HobbyLabel" Text="Нет данных" runat="server"/></td>
                 </tr>
                 <tr>
-                    <td>Дата рождения</td>
+                    <td class="label">Дата рождения</td>
                     <td><asp:Label ID="BirthDayLabel" Text="Нет данных" runat="server"/></td>
                 </tr>
             </table>

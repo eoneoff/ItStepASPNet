@@ -11,26 +11,33 @@ namespace PesronalInfoForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(Cache["FamilyName"] as string))
-                FamilyNameLabel.Text = Cache["FamilyName"] as string;
+            GetFromSession(FamilyNameLabel, "FamilyName");
 
-            if(!String.IsNullOrEmpty(Cache ["FirstName"] as string))
-                FirstNameLabel.Text = Cache["FirstName"] as string;
+            GetFromSession(FirstNameLabel, "FirstName");
 
-            if(!String.IsNullOrEmpty(Cache["Patronim"] as string))
-                PatronimLabel.Text = Cache["Patronim"] as string;
+            GetFromSession(PatronimLabel, "Patronim");
 
-            if (Cache["Sex"] != null)
-                SexLabel.Text = Cache["Sex"] as string;
+            GetFromSession(SexLabel, "Sex");
 
-            if (Cache["City"] != null)
-                CityLabel.Text = Cache["City"] as string;
-            
-            if(Cache["Hobbies"]!=null)
-                HobbyLabel.Text = Cache["Hobbies"] as string;
+            GetFromSession(CityLabel, "City");
 
-            if (Cache["BirthDate"] != null)
-                BirthDayLabel.Text = Cache["BirthDate"] as string;
+            GetFromSession(HobbyLabel, "Hobby");
+
+            GetFromSession(BirthDayLabel, "BirthDate");
+        }
+
+        private void GetFromSession(Label label, string property)
+        {
+            if(Session[property]!=null)
+            {
+                string value = Session[property] as string;
+                Session[property] = null;
+                if(value!=String.Empty)
+                {
+                    label.Text = value;
+                }
+            }
+
         }
     }
 }
