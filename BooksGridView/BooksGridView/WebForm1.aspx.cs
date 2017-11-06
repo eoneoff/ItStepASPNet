@@ -13,13 +13,15 @@ namespace BooksGridView
         protected void Page_Load(object sender, EventArgs e)
         {
             db = new booksEntities();
-            var cathegories = (from c in db.Spr_kategory select c).ToList();
+            var cathegories = db.Spr_kategory.ToList();
             Categories.DataSource = cathegories;
             if(!IsPostBack)
             {
                 Categories.DataTextField = "Category";
                 Categories.DataValueField = "Id";
                 Categories.DataBind();
+                Categories.Items.Insert(0, "Выберите категорию");
+                Categories.Items.FindByText(String.Empty).Text = "Без категории";
             }
         }
     }
