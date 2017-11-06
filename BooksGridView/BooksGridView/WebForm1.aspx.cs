@@ -20,6 +20,8 @@ namespace BooksGridView
                 Categories.DataTextField = "Category";
                 Categories.DataValueField = "Id";
                 Categories.DataBind();
+                Categories.Items.Insert(0, "Выберите категорию");
+                Categories.Items.FindByText(String.Empty).Text = "Без категории";
             }
         }
     }
