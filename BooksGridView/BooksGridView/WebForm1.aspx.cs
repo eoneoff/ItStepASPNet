@@ -28,6 +28,9 @@ namespace BooksGridView
             list = Categories;
             BooksByCategory.DataSource = BooksByCategoryDS;
             BooksByCategory.DataBind();
+            BooksByCategory.SelectedIndex = - 1;
+            BookView.DataSource = null;
+            BookView.DataBind();
         }
 
         public static IQueryable<books_new> GetBooksByCathegory(IQueryable<books_new> books)
@@ -46,6 +49,12 @@ namespace BooksGridView
             return (from b in books
                     where b.kategory_id == categoryId
                     select b);
+        }
+
+        protected void BooksByCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BookView.DataSource = SelectedBookDS;
+            BookView.DataBind();
         }
     }
 }
