@@ -9,7 +9,9 @@ namespace BooksGridView
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public static DropDownList list;
         booksEntities db;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             db = new booksEntities();
@@ -23,6 +25,27 @@ namespace BooksGridView
                 Categories.Items.Insert(0, "Выберите категорию");
                 Categories.Items.FindByText(String.Empty).Text = "Без категории";
             }
+            list = Categories;
+            BooksByCategory.DataSource = BooksByCategoryDS;
+            BooksByCategory.DataBind();
+        }
+
+        public static IQueryable<books_new> GetBooksByCathegory(IQueryable<books_new> books)
+        {
+            if (list.Text == "Выберите категорию")
+                return (from b in books
+                        where b.kategory_id==-1
+                        select b);
+            if (list.Text == "Без категории")
+                return (from b in books
+                        where b.Spr_kategory == null
+                        select b);
+
+            int categoryId = Int32.Parse(list.SelectedValue);
+
+            return (from b in books
+                    where b.kategory_id == categoryId
+                    select b);
         }
     }
 }

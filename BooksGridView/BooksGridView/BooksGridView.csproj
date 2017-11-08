@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D7E77515-49F5-4B27-917D-18D6103B2B77}</ProjectGuid>
+    <ProjectGuid>{C0870C68-0D4A-4B1B-8D43-2FE7D54F6C3C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,10 +45,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -74,12 +74,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="BooksModel.edmx">
+    <EntityDeploy Include="booksModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BooksModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>booksModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="BooksModel.edmx.diagram">
-      <DependentUpon>BooksModel.edmx</DependentUpon>
+    <Content Include="booksModel.edmx.diagram">
+      <DependentUpon>booksModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -90,54 +90,54 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BooksModel.Context.tt">
+    <Content Include="booksModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BooksModel.Context.cs</LastGenOutput>
-      <DependentUpon>BooksModel.edmx</DependentUpon>
+      <DependentUpon>booksModel.edmx</DependentUpon>
+      <LastGenOutput>booksModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="BooksModel.tt">
+    <Content Include="booksModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BooksModel.edmx</DependentUpon>
-      <LastGenOutput>BooksModel.cs</LastGenOutput>
+      <DependentUpon>booksModel.edmx</DependentUpon>
+      <LastGenOutput>booksModel.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BooksModel.Context.cs">
+    <Compile Include="booksModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BooksModel.Context.tt</DependentUpon>
+      <DependentUpon>booksModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BooksModel.cs">
+    <Compile Include="booksModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BooksModel.tt</DependentUpon>
+      <DependentUpon>booksModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="BooksModel.Designer.cs">
+    <Compile Include="booksModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BooksModel.edmx</DependentUpon>
+      <DependentUpon>booksModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="books_new.cs">
-      <DependentUpon>BooksModel.tt</DependentUpon>
+      <DependentUpon>booksModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spr_format.cs">
-      <DependentUpon>BooksModel.tt</DependentUpon>
+      <DependentUpon>booksModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Spr_izd.cs">
-      <DependentUpon>BooksModel.tt</DependentUpon>
+      <DependentUpon>booksModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Spr_kategory.cs">
-      <DependentUpon>BooksModel.tt</DependentUpon>
+      <DependentUpon>booksModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Spr_themes.cs">
-      <DependentUpon>BooksModel.tt</DependentUpon>
+      <DependentUpon>booksModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -167,9 +167,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62988</DevelopmentServerPort>
+          <DevelopmentServerPort>50635</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62988/</IISUrl>
+          <IISUrl>http://localhost:50635/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

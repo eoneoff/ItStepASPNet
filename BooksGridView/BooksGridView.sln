@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksGridView", "BooksGridView\BooksGridView.csproj", "{D7E77515-49F5-4B27-917D-18D6103B2B77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksGridView", "BooksGridView\BooksGridView.csproj", "{C0870C68-0D4A-4B1B-8D43-2FE7D54F6C3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D7E77515-49F5-4B27-917D-18D6103B2B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7E77515-49F5-4B27-917D-18D6103B2B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7E77515-49F5-4B27-917D-18D6103B2B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7E77515-49F5-4B27-917D-18D6103B2B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0870C68-0D4A-4B1B-8D43-2FE7D54F6C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0870C68-0D4A-4B1B-8D43-2FE7D54F6C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0870C68-0D4A-4B1B-8D43-2FE7D54F6C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0870C68-0D4A-4B1B-8D43-2FE7D54F6C3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {62557216-D611-46E4-8DBC-8E57BD0E498E}
+		SolutionGuid = {13B69246-2087-498F-9575-6A7BC6B03013}
 	EndGlobalSection
 EndGlobal
