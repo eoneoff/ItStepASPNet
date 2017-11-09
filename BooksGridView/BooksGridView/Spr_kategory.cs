@@ -23,5 +23,10 @@ namespace BooksGridView
         public int Id { get; set; }
     
         public virtual ICollection<books_new> books_new { get; set; }
+
+        public override string ToString()
+        {
+            return Category;
+        }
     }
 }
