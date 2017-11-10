@@ -40,13 +40,13 @@ namespace BooksGridView {
         protected global::System.Web.UI.WebControls.GridView BooksByCategory;
         
         /// <summary>
-        /// BookView control.
+        /// SelectedBook control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView BookView;
+        protected global::System.Web.UI.WebControls.DetailsView SelectedBook;
         
         /// <summary>
         /// SelectedBookDS control.
