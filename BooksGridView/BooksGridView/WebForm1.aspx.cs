@@ -15,11 +15,11 @@ namespace BooksGridView
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            db = new booksEntities();
-            var cathegories = db.Spr_kategory.ToList();
-            Categories.DataSource = cathegories;
             if(!IsPostBack)
             {
+                db = new booksEntities();
+                var cathegories = db.Spr_kategory.ToList();
+                Categories.DataSource = cathegories;
                 Categories.DataTextField = "Category";
                 Categories.DataValueField = "Id";
                 Categories.DataBind();
