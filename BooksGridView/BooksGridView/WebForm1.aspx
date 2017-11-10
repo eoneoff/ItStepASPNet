@@ -10,16 +10,25 @@
         {
             text-align:right;
             vertical-align:top;
+            color:yellow;
+        }
+        .section
+        {
+            display:inline-block;
+            float:left;
+            margin:0px 10px;
+            padding:10px;
+            background-color:cornflowerblue;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="display:inline-block; float:left;">
-            <asp:DropDownList ID="Categories" runat="server" AutoPostBack="true" Width="330px" />
+        <div class="section">
+            <asp:DropDownList ID="Categories" runat="server" AutoPostBack="true" Width="330px" OnSelectedIndexChanged="Categories_SelectedIndexChanged"/>
             <br/><br />            
             <asp:GridView ID="BooksByCategory" runat="server"
-                AutoGenerateColumns="false" DataKeyNames="N">
+                AutoGenerateColumns="false" DataKeyNames="N"  BackColor="White">
                 <Columns>
                     <asp:ButtonField ButtonType="Link" CommandName="Select" DataTextField="N" HeaderText="Id"/>
                     <asp:BoundField DataField="Name" HeaderText="Название" ItemStyle-Width="300px" />
@@ -29,7 +38,7 @@
                     forecolor="White"/>
             </asp:GridView>
         </div>
-        <div style="display:inline-block;float:left;margin:0px 20px">
+        <div class="section">
             <asp:FormView ID="BookView" runat="server" Width="330px" DataSourceID="SelectedBookDS"
                 DefaultMode="ReadOnly"  DataKeyNames="N">
                 <ItemTemplate>

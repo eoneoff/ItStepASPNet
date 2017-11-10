@@ -48,5 +48,11 @@ namespace BooksGridView
                     where b.kategory_id == categoryId
                     select b);
         }
+
+        protected void Categories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            BooksByCategory.SelectedIndex = -1;
+        }
     }
 }
