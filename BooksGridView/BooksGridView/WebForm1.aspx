@@ -87,7 +87,7 @@
                     <table>
                         <tr>
                             <td class="label">Id</td>
-                            <td><%#Eval("N") %></td>
+                            <td><asp:Label ID="id" runat="server" Text='<%#Bind("N") %>'/></td>
                         </tr>
                         <tr>
                             <td class="label">Название</td>
@@ -188,7 +188,7 @@
                             <td><asp:DropDownList ID="SelectTheme" runat="server" DataSourceID="Theme" DataTextField="Themes" DataValueField="id"  SelectedValue='<%#Bind("themes_id") %>' /></td>
                         </tr>
                     </table>
-                    <asp:Button runat="server" ID="Save" Text="Сохранить" CommandName="Update"/>
+                    <asp:Button runat="server" ID="Save" Text="Сохранить" CommandName="Insert"/>
                     <asp:Button runat="server" ID="Cancel" Text="Отмена" CommandName="Cancel" />
                 </InsertItemTemplate>
                 <EmptyDataTemplate>
