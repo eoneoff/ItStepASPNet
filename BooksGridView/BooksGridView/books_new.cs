@@ -20,7 +20,7 @@ namespace BooksGridView
         public string Name { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<double> Pages { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<DateTime> Date { get; set; }
         public Nullable<double> Pressrun { get; set; }
         public Nullable<int> izd_id { get; set; }
         public Nullable<int> format_id { get; set; }

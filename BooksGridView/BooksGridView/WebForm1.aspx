@@ -40,7 +40,8 @@
         </div>
         <div class="section">
             <asp:FormView ID="BookView" runat="server" Width="330px" DataSourceID="SelectedBookDS"
-                DefaultMode="ReadOnly"  DataKeyNames="N">
+                DefaultMode="ReadOnly"  DataKeyNames="N" OnItemInserting="BookView_ItemInserting"
+                OnItemDeleted="BookView_ItemDeleted" OnItemCreated="BookView_ItemCreated" OnItemUpdated="BookView_ItemUpdated">
                 <ItemTemplate>
                     <table>
                         <tr>
@@ -150,7 +151,7 @@
                     <table>
                         <tr>
                             <td class="label">Id</td>
-                            <td><%#Eval("N") %></td>
+                            <td><asp:Label ID="idInsert" runat="server" Text='<%#Bind("N") %>'/></td>
                         </tr>
                         <tr>
                             <td class="label">Название</td>
