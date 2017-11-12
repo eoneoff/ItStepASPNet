@@ -9,8 +9,6 @@ namespace BooksGridView
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        public static DropDownList list;
-        public int selectedBookId;
         booksEntities db = new booksEntities();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,12 +23,13 @@ namespace BooksGridView
                 Categories.Items.Insert(0, "Выберите категорию");
                 Categories.Items.FindByText(String.Empty).Text = "Без категории";
             }
-            list = Categories;
+            Session["Category"]=Categories;
             RefreshBooks();
         }
 
         public static IQueryable<books_new> GetBooksByCathegory(IQueryable<books_new> books)
         {
+            DropDownList list = HttpContext.Current.Session["Category"] as DropDownList;
             if (list.Text == "Выберите категорию")
                 return (from b in books
                         where b.kategory_id==-1
