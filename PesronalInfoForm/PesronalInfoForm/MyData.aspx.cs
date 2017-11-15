@@ -17,6 +17,7 @@ namespace PesronalInfoForm
                 string[] hobbies = { "Туризм", "Музыка", "Футбол", "Рисование", "Кино", "Танцы" };
                 Cities.DataSource = cities;
                 Cities.DataBind();
+                Cities.Items.Insert(0, "");
                 Hobbies.DataSource = hobbies;
                 Hobbies.DataBind();
             }
@@ -24,29 +25,32 @@ namespace PesronalInfoForm
 
         protected void Submit_Click(object sender, EventArgs e)
         {
-            Session["FamilyName"] = FamilyNameTextBox.Text;
-            Session["FirstName"] = FirstNameTextBox.Text;
-            Session["Patronim"] = PatronimTextBox.Text;
-
-            if (MaleRadio.Checked)
-                Session["Sex"] = "Мужской";
-            else
-                Session["Sex"] = "Женский";
-
-            Session["City"] = Cities.SelectedValue;
-
-            string hobbies = String.Empty;
-            foreach(ListItem hobby in Hobbies.Items)
+            if (Page.IsValid)
             {
-                if(hobby.Selected)
-                    hobbies += hobby.Text + "<br/>";
+                Session["FamilyName"] = FamilyNameTextBox.Text;
+                Session["FirstName"] = FirstNameTextBox.Text;
+                Session["Patronim"] = PatronimTextBox.Text;
+
+                if (MaleRadio.Checked)
+                    Session["Sex"] = "Мужской";
+                else
+                    Session["Sex"] = "Женский";
+
+                Session["City"] = Cities.SelectedValue;
+
+                string hobbies = String.Empty;
+                foreach (ListItem hobby in Hobbies.Items)
+                {
+                    if (hobby.Selected)
+                        hobbies += hobby.Text + "<br/>";
+                }
+
+                Session["Hobby"] = hobbies;
+
+                Session["BirthDate"] = BirthDate.SelectedDate.ToString("dd MMMM yyyyг");
+
+                Response.Redirect("MyDataView.aspx");
             }
-
-            Session["Hobby"] = hobbies;
-
-            Session["BirthDate"] = BirthDate.SelectedDate.ToString("dd MMMM yyyyг");
-
-            Response.Redirect("MyDataView.aspx");
         }
     }
 }

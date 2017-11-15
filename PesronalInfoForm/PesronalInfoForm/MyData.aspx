@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyData.aspx.cs" Inherits="PesronalInfoForm.MyData" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyData.aspx.cs" Inherits="PesronalInfoForm.MyData"  UnobtrusiveValidationMode="None"%>
 
 <!DOCTYPE html>
 
@@ -24,14 +24,44 @@
                 <tr>
                     <td>Фамилия</td>
                     <td><asp:TextBox ID="FamilyNameTextBox" runat="server"/></td>
+                    <td>
+                        <asp:RequiredFieldValidator 
+                            ID="FamilyNaveValidator"
+                            runat="server"
+                            ControlToValidate="FamilyNameTextBox"
+                            ErrorMessage="Укажите фамилию"
+                            ForeColor="Crimson">
+                            *
+                        </asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td>Имя</td>
                     <td><asp:TextBox ID="FirstNameTextBox" runat="server"/></td>
+                    <td>
+                         <asp:RequiredFieldValidator 
+                            ID="FirstNameValidator"
+                            runat="server"
+                            ControlToValidate="FirstNameTextBox"
+                            ErrorMessage="Укажите имя"
+                            ForeColor="Crimson">
+                            *
+                        </asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td>Отчество</td>
                     <td><asp:TextBox ID="PatronimTextBox" runat="server"/></td>
+                    <td>
+                         <asp:RequiredFieldValidator 
+                            ID="PatronimValidator"
+                            runat="server"
+                            ControlToValidate="PatronimTextBox"
+                            ErrorMessage="Укажите отчестсво"
+                            ForeColor="Crimson">
+                            *
+                        </asp:RequiredFieldValidator>
+                    </td>
                 </tr>
             </table>
             Пол
@@ -42,6 +72,14 @@
             <br /><br />
             Город
             <asp:DropDownList ID="Cities" runat="server" AutoPostBack="false"/>
+            <asp:RequiredFieldValidator 
+                            ID="CityValidator"
+                            runat="server"
+                            ControlToValidate="Cities"
+                            ErrorMessage="Укажите город"
+                            ForeColor="Crimson">
+                            *
+                        </asp:RequiredFieldValidator>
             <br /><br />
             Хобби<br />
             <asp:CheckBoxList ID="Hobbies" runat="server" />
@@ -66,6 +104,10 @@
             </asp:Calendar>
             <br />
             <asp:Button ID="Submit" Text="Отправить" onclick="Submit_Click" runat="server"/>
+            <asp:ValidationSummary ID="Summart" runat="server"
+                ShowSummary="true" DisplayMode="BulletList"
+                ForeColor="Crimson"
+                HeaderText="Заполните обязательные поля"/>
         </div>
     </form>
 </body>

@@ -31,6 +31,15 @@ namespace PesronalInfoForm {
         protected global::System.Web.UI.WebControls.TextBox FamilyNameTextBox;
         
         /// <summary>
+        /// FamilyNaveValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FamilyNaveValidator;
+        
+        /// <summary>
         /// FirstNameTextBox control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace PesronalInfoForm {
         protected global::System.Web.UI.WebControls.TextBox FirstNameTextBox;
         
         /// <summary>
+        /// FirstNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstNameValidator;
+        
+        /// <summary>
         /// PatronimTextBox control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace PesronalInfoForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PatronimTextBox;
+        
+        /// <summary>
+        /// PatronimValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator PatronimValidator;
         
         /// <summary>
         /// MaleRadio control.
@@ -76,6 +103,15 @@ namespace PesronalInfoForm {
         protected global::System.Web.UI.WebControls.DropDownList Cities;
         
         /// <summary>
+        /// CityValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator CityValidator;
+        
+        /// <summary>
         /// Hobbies control.
         /// </summary>
         /// <remarks>
@@ -101,5 +137,14 @@ namespace PesronalInfoForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Submit;
+        
+        /// <summary>
+        /// Summart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary Summart;
     }
 }
