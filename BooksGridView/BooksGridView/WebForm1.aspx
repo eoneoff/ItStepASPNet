@@ -24,24 +24,34 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" />
         <div class="section">
             <asp:DropDownList ID="Categories" runat="server" AutoPostBack="true" Width="330px" OnSelectedIndexChanged="Categories_SelectedIndexChanged"/>
-            <br/><br />            
-            <asp:GridView ID="BooksByCategory" runat="server"
-                AutoGenerateColumns="false" DataKeyNames="N"  BackColor="White">
-                <Columns>
-                    <asp:ButtonField ButtonType="Link" CommandName="Select" DataTextField="N" HeaderText="Id"/>
-                    <asp:BoundField DataField="Name" HeaderText="Название" ItemStyle-Width="300px" />
-                </Columns>
-                <SelectedRowStyle 
-                    backcolor="Blue"
-                    forecolor="White"/>
-            </asp:GridView>
+            <br/><br />
+            <asp:UpdatePanel ID="CategoryGridUpdatePanel" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:GridView ID="BooksByCategory" runat="server"
+                        AutoGenerateColumns="false" DataKeyNames="N"  BackColor="White">
+                        <Columns>
+                            <asp:ButtonField ButtonType="Link" CommandName="Select" DataTextField="N" HeaderText="Id"/>
+                            <asp:BoundField DataField="Name" HeaderText="Название" ItemStyle-Width="300px" />
+                        </Columns>
+                        <SelectedRowStyle 
+                            backcolor="Blue"
+                            forecolor="White"/>
+                    </asp:GridView>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Categories" EventName="SelectedIndexChanged" />
+                    <asp:AsyncPostBackTrigger ControlID="BookView" EventName="ItemCreated" />
+                    <asp:AsyncPostBackTrigger ControlID="BookView" EventName="ItemUpdated" />
+                    <asp:AsyncPostBackTrigger ControlID="BookView" EventName="ItemDeleted" />
+                </Triggers>
+            </asp:UpdatePanel>
         </div>
         <div class="section">
             <asp:FormView ID="BookView" runat="server" Width="330px" DataSourceID="SelectedBookDS"
-                DefaultMode="ReadOnly"  DataKeyNames="N" OnItemInserting="BookView_ItemInserting"
-                OnItemDeleted="BookView_ItemDeleted" OnItemCreated="BookView_ItemCreated" OnItemUpdated="BookView_ItemUpdated">
+                DefaultMode="ReadOnly"  DataKeyNames="N" OnItemInserting="BookView_ItemInserting">
                 <ItemTemplate>
                     <table>
                         <tr>
