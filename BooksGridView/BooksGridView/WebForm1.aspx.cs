@@ -70,16 +70,19 @@ namespace BooksGridView
         protected void BookView_ItemDeleted(object sender, FormViewDeletedEventArgs e)
         {
             RefreshBooks();
+            BooksByCategoryUpdatePanel.Update();
         }
 
         protected void BookView_ItemCreated(object sender, EventArgs e)
         {
             RefreshBooks();
+            BooksByCategoryUpdatePanel.Update();
         }
 
         protected void BookView_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
             RefreshBooks();
+            BooksByCategoryUpdatePanel.Update();
         }
     }
 }
