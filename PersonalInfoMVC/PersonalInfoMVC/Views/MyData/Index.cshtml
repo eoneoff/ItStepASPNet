@@ -1,0 +1,76 @@
+﻿@model PersonalInfoMVC.Models.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Введите данные</title>
+    <style>
+        form
+        {
+            color:white;
+            background-color:cornflowerblue;
+            width:300px;
+            margin:10px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @{ 
+            SelectList cities = (SelectList)ViewBag.Cities;
+            MultiSelectList hobbies = (MultiSelectList)ViewBag.Hobbies;
+            int hobbiesCount = hobbies.Count();
+        }
+        @using (Html.BeginForm("Index", "MyDataView"))
+        {
+            <table>
+                <tr>
+                    <td>Фамилия</td>
+                    <td>@Html.TextBoxFor(p=>p.FamilyName)</td>
+                </tr>
+                <tr>
+                    <td>Имя</td>
+                    <td>@Html.TextBoxFor(p =>p.FirstName)</td>
+                </tr>
+                <tr>
+                    <td>Отчество</td>
+                    <td>@Html.TextBoxFor(p=>p.Patronim)</td>
+                </tr>
+                <tr>
+                    <td>Пол</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Мужской")
+                        @Html.RadioButton("Sex", "Male", true)
+                    </td>
+                    <td>
+                        @Html.Label("Женский")
+                        @Html.RadioButton("Sex", "Female", false)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Город</td>
+                    <td>@Html.DropDownListFor(p => p.City, cities)</td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:top">Хобби</td>
+                    <td>@Html.ListBoxFor(p => p.Hobbies, hobbies, new { size = hobbiesCount })</td>
+                </tr>
+                <tr>
+                    <td>Дата рождения</td>
+                    <td>@Html.TextBoxFor(p => p.DateOfBirth, new { type = "date" })</td>
+                </tr>
+            </table>
+            <input type="submit" value="Отправить"/>
+        }
+    </div>
+</body>
+</html>
