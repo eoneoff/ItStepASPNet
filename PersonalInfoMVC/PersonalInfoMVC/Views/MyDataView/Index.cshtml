@@ -1,4 +1,4 @@
-﻿
+﻿@model PersonalInfoMVC.Models.Person
 @{
     Layout = null;
 }
@@ -9,9 +9,66 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Ваши данные</title>
+    <style>
+        #result {
+            color: white;
+            background-color: cornflowerblue;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .label {
+            color: yellow;
+        }
+    </style>
+
 </head>
 <body>
-    <div> 
+    <div id="result">
+        <table>
+            <tr>
+                <td class="label">Фамилия</td>
+                <td>@Model.FamilyName</td>
+            </tr>
+            <tr>
+                <td class="label">Имя</td>
+                <td>@Model.FirstName</td>
+            </tr>
+            <tr>
+                <td class="label">Отчество</td>
+                <td>@Model.Patronim</td>
+            </tr>
+            <tr>
+                <td class="label">Пол</td>
+                <td>@Model.Sex</td>
+            </tr>
+            <tr>
+                <td class="label">Город</td>
+                <td>@Model.City</td>
+            </tr>
+            <tr>
+                <td valign="top" class="label">Хобби</td>
+                <td>
+                    @{ 
+                        foreach(string hobby in Model.Hobbies)
+                        {
+                            @hobby<br/>
+                        }
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Дата рождения</td>
+                <td>
+                    @if(Model.DateOfBirth!=null)
+                    {
+                        DateTime dateOfBirth = (DateTime)Model.DateOfBirth;
+                        @dateOfBirth.ToString("dd MMMM yyyy г.")
+                    }
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
