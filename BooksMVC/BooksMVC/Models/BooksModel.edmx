@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="booksModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="books_new">
+          <Key>
+            <PropertyRef Name="N" />
+          </Key>
+          <Property Name="N" Type="int" Nullable="false" />
+          <Property Name="Code" Type="float" />
+          <Property Name="New" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Pages" Type="float" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Pressrun" Type="float" />
+          <Property Name="izd_id" Type="int" />
+          <Property Name="format_id" Type="int" />
+          <Property Name="themes_id" Type="int" />
+          <Property Name="kategory_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Spr_format">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Format" Type="nvarchar" MaxLength="255" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Spr_izd">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Izd" Type="nvarchar" MaxLength="255" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Spr_kategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Category" Type="nvarchar" MaxLength="255" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Spr_themes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Themes" Type="nvarchar" MaxLength="255" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_books_new_Spr_format">
+          <End Role="Spr_format" Type="Self.Spr_format" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_format">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="format_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_new_Spr_izd">
+          <End Role="Spr_izd" Type="Self.Spr_izd" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_izd">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="izd_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_new_Spr_kategory">
+          <End Role="Spr_kategory" Type="Self.Spr_kategory" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_kategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="kategory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_new_Spr_themes">
+          <End Role="Spr_themes" Type="Self.Spr_themes" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_themes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="themes_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="booksModelStoreContainer">
+          <EntitySet Name="books_new" EntityType="Self.books_new" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Spr_format" EntityType="Self.Spr_format" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Spr_izd" EntityType="Self.Spr_izd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Spr_kategory" EntityType="Self.Spr_kategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Spr_themes" EntityType="Self.Spr_themes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_books_new_Spr_format" Association="Self.FK_books_new_Spr_format">
+            <End Role="Spr_format" EntitySet="Spr_format" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_new_Spr_izd" Association="Self.FK_books_new_Spr_izd">
+            <End Role="Spr_izd" EntitySet="Spr_izd" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_new_Spr_kategory" Association="Self.FK_books_new_Spr_kategory">
+            <End Role="Spr_kategory" EntitySet="Spr_kategory" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_new_Spr_themes" Association="Self.FK_books_new_Spr_themes">
+            <End Role="Spr_themes" EntitySet="Spr_themes" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="booksModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="books_new">
+          <Key>
+            <PropertyRef Name="N" />
+          </Key>
+          <Property Name="N" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="Double" />
+          <Property Name="New" Type="Boolean" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Pages" Type="Double" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Pressrun" Type="Double" />
+          <Property Name="izd_id" Type="Int32" />
+          <Property Name="format_id" Type="Int32" />
+          <Property Name="themes_id" Type="Int32" />
+          <Property Name="kategory_id" Type="Int32" />
+          <NavigationProperty Name="Spr_format" Relationship="Self.FK_books_new_Spr_format" FromRole="books_new" ToRole="Spr_format" />
+          <NavigationProperty Name="Spr_izd" Relationship="Self.FK_books_new_Spr_izd" FromRole="books_new" ToRole="Spr_izd" />
+          <NavigationProperty Name="Spr_kategory" Relationship="Self.FK_books_new_Spr_kategory" FromRole="books_new" ToRole="Spr_kategory" />
+          <NavigationProperty Name="Spr_themes" Relationship="Self.FK_books_new_Spr_themes" FromRole="books_new" ToRole="Spr_themes" />
+        </EntityType>
+        <EntityType Name="Spr_format">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Format" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="books_new" Relationship="Self.FK_books_new_Spr_format" FromRole="Spr_format" ToRole="books_new" />
+        </EntityType>
+        <EntityType Name="Spr_izd">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Izd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="books_new" Relationship="Self.FK_books_new_Spr_izd" FromRole="Spr_izd" ToRole="books_new" />
+        </EntityType>
+        <EntityType Name="Spr_kategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="books_new" Relationship="Self.FK_books_new_Spr_kategory" FromRole="Spr_kategory" ToRole="books_new" />
+        </EntityType>
+        <EntityType Name="Spr_themes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Themes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="books_new" Relationship="Self.FK_books_new_Spr_themes" FromRole="Spr_themes" ToRole="books_new" />
+        </EntityType>
+        <Association Name="FK_books_new_Spr_format">
+          <End Role="Spr_format" Type="Self.Spr_format" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_format">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="format_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_new_Spr_izd">
+          <End Role="Spr_izd" Type="Self.Spr_izd" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_izd">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="izd_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_new_Spr_kategory">
+          <End Role="Spr_kategory" Type="Self.Spr_kategory" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_kategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="kategory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_new_Spr_themes">
+          <End Role="Spr_themes" Type="Self.Spr_themes" Multiplicity="0..1" />
+          <End Role="books_new" Type="Self.books_new" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spr_themes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="books_new">
+              <PropertyRef Name="themes_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="booksEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="books_new" EntityType="Self.books_new" />
+          <EntitySet Name="Spr_format" EntityType="Self.Spr_format" />
+          <EntitySet Name="Spr_izd" EntityType="Self.Spr_izd" />
+          <EntitySet Name="Spr_kategory" EntityType="Self.Spr_kategory" />
+          <EntitySet Name="Spr_themes" EntityType="Self.Spr_themes" />
+          <AssociationSet Name="FK_books_new_Spr_format" Association="Self.FK_books_new_Spr_format">
+            <End Role="Spr_format" EntitySet="Spr_format" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_new_Spr_izd" Association="Self.FK_books_new_Spr_izd">
+            <End Role="Spr_izd" EntitySet="Spr_izd" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_new_Spr_kategory" Association="Self.FK_books_new_Spr_kategory">
+            <End Role="Spr_kategory" EntitySet="Spr_kategory" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_new_Spr_themes" Association="Self.FK_books_new_Spr_themes">
+            <End Role="Spr_themes" EntitySet="Spr_themes" />
+            <End Role="books_new" EntitySet="books_new" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="booksModelStoreContainer" CdmEntityContainer="booksEntities">
+          <EntitySetMapping Name="books_new">
+            <EntityTypeMapping TypeName="booksModel.books_new">
+              <MappingFragment StoreEntitySet="books_new">
+                <ScalarProperty Name="N" ColumnName="N" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="New" ColumnName="New" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Pages" ColumnName="Pages" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Pressrun" ColumnName="Pressrun" />
+                <ScalarProperty Name="izd_id" ColumnName="izd_id" />
+                <ScalarProperty Name="format_id" ColumnName="format_id" />
+                <ScalarProperty Name="themes_id" ColumnName="themes_id" />
+                <ScalarProperty Name="kategory_id" ColumnName="kategory_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spr_format">
+            <EntityTypeMapping TypeName="booksModel.Spr_format">
+              <MappingFragment StoreEntitySet="Spr_format">
+                <ScalarProperty Name="Format" ColumnName="Format" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spr_izd">
+            <EntityTypeMapping TypeName="booksModel.Spr_izd">
+              <MappingFragment StoreEntitySet="Spr_izd">
+                <ScalarProperty Name="Izd" ColumnName="Izd" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spr_kategory">
+            <EntityTypeMapping TypeName="booksModel.Spr_kategory">
+              <MappingFragment StoreEntitySet="Spr_kategory">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spr_themes">
+            <EntityTypeMapping TypeName="booksModel.Spr_themes">
+              <MappingFragment StoreEntitySet="Spr_themes">
+                <ScalarProperty Name="Themes" ColumnName="Themes" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

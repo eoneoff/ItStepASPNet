@@ -1,0 +1,106 @@
+﻿@model BooksMVC.Models.books_new
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Подробности</h2>
+
+<div>
+    <h4>Книги</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.New)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.New)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pressrun)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pressrun)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spr_format.Format)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spr_format.Format)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spr_izd.Izd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spr_izd.Izd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spr_kategory.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spr_kategory.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spr_themes.Themes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spr_themes.Themes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.N }) |
+    @Html.ActionLink("Назад в библиотеку", "Index")
+</p>
