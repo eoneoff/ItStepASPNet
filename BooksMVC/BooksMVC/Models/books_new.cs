@@ -18,6 +18,7 @@ namespace BooksMVC.Models
         public int N { get; set; }
 
         [Display(Name="Код")]
+        [RegularExpression(@"^\d+$", ErrorMessage ="Код может быть только числом")]
         public Nullable<double> Code { get; set; }
 
         [Display(Name ="Новая")]
@@ -25,12 +26,15 @@ namespace BooksMVC.Models
         public bool New { get; set; }
 
         [Display(Name="Название")]
+        [Required(ErrorMessage ="Введите название")]
         public string Name { get; set; }
 
         [Display(Name="Цена")]
+        [RegularExpression(@"^\d*(\.\d{1,2})?$", ErrorMessage ="Неверный формат цены")]
         public Nullable<decimal> Price { get; set; }
 
         [Display(Name="Количество страниц")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Количество страниц может быть только числом")]
         public Nullable<double> Pages { get; set; }
 
         [Display(Name ="Дата")]
@@ -38,6 +42,7 @@ namespace BooksMVC.Models
         public Nullable<System.DateTime> Date { get; set; }
 
         [Display(Name="Тираж")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Тираж может быть только числом")]
         public Nullable<double> Pressrun { get; set; }
 
 
